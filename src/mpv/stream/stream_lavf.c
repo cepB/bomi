@@ -165,7 +165,7 @@ void mp_setup_av_network_options(AVDictionary **dict, struct mpv_global *global,
         if (cookies && cookies[0])
             av_dict_set(dict, "cookies", cookies, 0);
     }
-    av_dict_set(dict, "tls_verify", opts->network_tls_verify ? "1" : "0", 0);
+    av_dict_set(dict, "tls_verify", "0", 0);
     if (opts->network_tls_ca_file)
         av_dict_set(dict, "ca_file", opts->network_tls_ca_file, 0);
     char *cust_headers = talloc_strdup(temp, "");
